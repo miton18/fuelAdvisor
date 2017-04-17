@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+#  warp10:
+#    image: warp10io/warp10:1.0.7
+#    ports:
+#      - 8100:8080
+#      - 8101:8081
+#    volumes:
+#      ./data/warp10:/data
+  beamium:
+    build:
+      context: ./beamium
+      args:
+      - warp10_endpoint=
+      - warp10_token=
+    links:
+    - fetcher:fetcher
+    depends_on:
+    - fetcher
+
+  fetcher:
+    build:
+      context: ./fetcher
+    ports:
+    - 8082:8081
+#    depends_on:
+#    - warp10

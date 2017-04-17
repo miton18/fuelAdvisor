@@ -1,0 +1,5 @@
+.vscode/
+
+**/*.js
+
+fetcher/node_modules

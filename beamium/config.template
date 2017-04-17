@@ -1,0 +1,13 @@
+sources:
+  fuelAdvice:
+    url: http://fetcher:8081/stations
+    period: 60000
+    format: sensision
+
+sinks:
+  localhost:
+    url: $WARP10_ENDPOINT
+    token: $WARP10_TOKEN
+
+parameters:
+  log-level: 6
